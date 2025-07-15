@@ -3,6 +3,7 @@
 source $PWD/scripts/2020.sh
 source $PWD/scripts/2022.sh
 source $PWD/scripts/2023.sh
+source $PWD/scripts/2026.sh
 source $PWD/scripts/adsk.sh
 
 # Convert Maya packages
@@ -30,6 +31,13 @@ function convertMaya()
             mvDebPkg2023 $2
             cd $2
             debToZst2023
+        ;;
+
+        2026)
+            rpmToDeb2026
+            mvDebPkg2026 $2
+            cd $2
+            debToZst2026
         ;;
     esac
 }
